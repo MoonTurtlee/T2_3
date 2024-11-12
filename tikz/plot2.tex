@@ -1,0 +1,32 @@
+\begin{tikzpicture}[scale=0.7]
+    %\begin{loglogaxis}[
+    %\begin{semilogxaxis}[ % Cambiar a semilogxaxis    
+    \begin{axis}[
+        xlabel={\Large Meandistance [\AA] },
+        ylabel={\Large Efree [eV]},
+        %grid=major,
+        legend pos=north east,
+        legend cell align={left},
+        %log basis x=10,
+        %log basis y=10,
+        %xmin=2, xmax=2^21,
+        %ymin=0.1, ymax=100,
+        width=10cm, % Ajusta el ancho de la gráfica
+        height=10cm, % Ajusta la altura de la gráfica
+        %xtick=data,
+    ]
+    \addplot[magenta , only marks, mark=square*, mark options={draw=black,line width = 1pt}, mark size=4pt] coordinates {
+        %(7.112914 ,	-255.554964)
+        (5.807670 ,	-255.571675)
+        (2.903835 ,	-255.534455)
+        (5.029590 ,	-255.564079)
+        (4.106643 ,	-255.551738)       
+        };
+    \addlegendentry{cantmax = 0} 
+    \addplot[cyan , only marks, mark=square*, mark options={draw=black,line width = 1pt}, mark size=4pt] coordinates {
+        (7.112914 ,	-255.554964)   
+        };
+        \addlegendentry{cantmax = 1} 
+\end{axis}
+%\end{semilogxaxis} % Cambiar a semilogxaxis
+\end{tikzpicture}

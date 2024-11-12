@@ -1,0 +1,67 @@
+
+\begin{tikzpicture}
+    %\begin{loglogaxis}[
+    %\begin{semilogxaxis}[ % Cambiar a semilogxaxis    
+    \begin{axis}[
+        xlabel={Número de Cudastreams },
+        ylabel={Tiempo [ms]},
+        grid=major,
+        legend pos=north west,
+        legend cell align={left},
+        width=16cm,
+        height=10cm, 
+        xtick=data,
+    ]
+    \addplot[blue, only marks, mark=square*] coordinates {
+        (2   , 14.229344)
+        (4   , 13.435616 )
+        (8   , 12.929280 )
+        (12  , 12.628000 )
+        (16  , 13.286176 )
+        (20  , 13.873152 )
+        (24  , 13.531168 )
+        (28  , 14.116384 )
+        (32  , 14.518528 )
+        (36  , 14.448992 )
+        (40  , 14.356640 )
+        (44  , 15.226560 )
+        (48  , 14.473888 )
+        (52  , 15.066720 )
+        (56  , 15.426560 )
+        (60  , 15.380416 )
+        (64  , 15.348064 )
+    };
+    \addlegendentry{GPU\_51 (1)}
+    \addplot[red, only marks, mark=square*] coordinates {
+        (2  , 12.799264 ) 
+        (4  , 12.956192 )
+        (8  , 13.371104 )
+        (12 , 14.495616 )
+        (16 , 14.783360 ) 
+        (20 , 15.152672 ) 
+        (24 , 15.475488 ) 
+        (28 , 15.676416 ) 
+        (32 , 15.948800 ) 
+        (36 , 16.064129 ) 
+        (40 , 15.904544 ) 
+        (44 , 16.157921 ) 
+        (48 , 16.444992 ) 
+        (52 , 16.943169 ) 
+        (56 , 16.894304 ) 
+        (60 , 17.689600 ) 
+        (64 , 17.559551 ) 
+    };
+    \addlegendentry{GPU\_6 (2)}
+    \addplot[green, only marks, mark=square*] coordinates {
+        (6, 17.607168) 
+        (12, 12.159264) 
+        (24, 12.239648) 
+        (24, 12.169376) 
+        (48, 12.490624) 
+        (72, 14.081920) 
+    };
+    \addlegendentry{GPU\_7 (3)}
+   
+\end{axis}
+%\end{semilogxaxis} % Cambiar a semilogxaxis
+\end{tikzpicture}

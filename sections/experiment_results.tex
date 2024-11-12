@@ -1,0 +1,51 @@
+\begin{mdframed}
+    \textbf{La extensión máxima para esta sección es de 4 páginas.}
+\end{mdframed}
+
+
+En esta sección, los resultados obtenidos, como las gráficas o tablas, deben estar respaldados por los datos generados durante la ejecución de sus programas. Es fundamental que, junto con el informe, se adjunten los archivos que contienen dichos datos para permitir su verificación. Además, se debe permitir y especficiar como obtener esos archivos desde una ejecución en otro computador (otra infraestructura para hacer lso experimentos).
+
+\textbf{No es necesario automatizar la generación de las gráficas}, pero sí es imprescindible que se pueda confirmar que las visualizaciones presentadas son producto de los datos generados por sus algoritmos, aunque la trazabilidad de los datos hasta las visualizaciones es esencial para garantizar que su validez: describa cómo se generaron los datos, cómo se procesaron y cómo se visualizaron de manera que pueda ser replicado por quien lea su informe.
+
+Agregue gráficas que muestren los resultados de sus experimentos. La cantidad de páginas es limitada, por lo tanto escoja las gráficas más representativas y que muestren de manera clara los resultados obtenidos. Esta elección es parte de lo que se evaluara en la sección de presentación de resultados. Referencie las figuras en el texto, describa lo que se observa en ellas y por qué son relevantes.
+
+En la \cref{fig:scatterplot_1} se muestra un scatterplot hecho con \href{https://es.overleaf.com/learn/latex/TikZ_package}{TikZ} con el tamaño ideal cuando se incluyen dos figuras. Queda a criterio de usted el decidir qué figuras incluir.
+
+\begin{figure}[H]
+    \centering
+    \input{tikz/plot1.tex}
+    \caption{Ejemplo de scatterplot hecho con tikz. Tamaño ideal 1.}
+    \label{fig:scatterplot_1}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[t]{0.5\textwidth}
+    \input{tikz/plot2.tex}
+    \end{minipage}%
+    \begin{minipage}[t]{0.5\textwidth}
+    \input{tikz/plot3.tex}
+    \end{minipage}%
+    \caption{Ejemplo de scatterplot hecho con tikz. Tamaño ideal 2.}
+    \label{fig:scatterplot_2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[t]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{images/4_impurezas_cantmax_size10.png}
+    \end{minipage}%
+    \begin{minipage}[t]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{images/4_impurezas_cantmax_size10.png}    \end{minipage}%
+    \caption{Ejemplo de scatterplot hecho con matplotlib.}
+    \label{fig:scatterplot_3}
+\end{figure}
+
+
+
+
+
+\begin{mdframed}
+    Recuerde que es imprescindible que se pueda replicar la generación de las gráficas, por lo que usted debe incluir cómo generó esos datos y  cómo podría generarlos la persona que revisa su entrega y ejecuta sus programas. Por ejemplo, si genera un scatterpolot con Tikz, usted debe explicar cómo obtener la tupla de valores que se usaron para generar la gráfica.
+\end{mdframed}

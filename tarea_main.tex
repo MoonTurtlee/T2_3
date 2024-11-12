@@ -1,0 +1,105 @@
+\documentclass[11pt,spanish]{article} % Tipo y tamaño de letra del documento.
+
+\input{preamble.tex} 
+
+\input{author.tex}
+
+\headheight=14pt
+\linespread{1.3}
+\author{\namestudent}
+\pagestyle{fancy}
+\fancyhf{}%
+\fancyfoot[R]{ \namestudent \\ \rolusm}
+\fancyfoot[L]{Campus \campus} 
+\fancyfoot[C]{\thepage}
+\rhead{2024-2}
+\lhead{INF-221}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newbool{programs}
+\boolfalse{programs}
+\chead{REPORTE TAREA \tnum~}
+
+
+
+\title{
+  \huge
+  \textbf{REPORTE TAREA \tnum~ \\ ALGORITMOS Y COMPLEJIDAD} \\[1ex]
+  \emph{\textquote{Explorando la Distancia entre Cadenas, una Operación a la Vez}}
+  }
+
+  
+\date{
+  \small
+  \today\\
+  \currenttime
+}
+
+
+
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy} 
+\vspace{-1.0\baselineskip}
+
+
+
+
+\begin{abstract}
+  \textit{ 
+    \input{sections/abstract}
+  }
+     
+\end{abstract}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+
+\newpage
+\section{Introducción}
+\input{sections/introduction}
+
+\newpage
+\section{Diseño y Análisis de Algoritmos} 
+\input{sections/design_analysis}
+
+\subsection{Fuerza Bruta}
+
+\input{sections/design_analysis_brute_force}
+\subsection{Programación Dinámica}
+\input{sections/design_analysis_dynamic_programming}
+\newpage
+\section{Implementaciones}
+\input{sections/implementations}
+
+\newpage
+\section{Experimentos}
+\input{sections/experiment_intro}
+\subsection{Dataset (casos de prueba)}
+\input{sections/experiment_dataset}
+
+\subsection{Resultados}
+\input{sections/experiment_results}
+
+\newpage
+\section{Conclusiones}
+\input{sections/conclusions}
+
+\newpage
+
+\section{Condiciones de entrega}
+\input{condiciones}
+
+\newpage
+\appendix
+
+
+\section{Apéndice 1}
+\input{sections/appendix1}
+\printbibliography
+
+\end{document}
+
+
