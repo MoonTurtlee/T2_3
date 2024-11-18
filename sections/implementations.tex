@@ -1,8 +1,23 @@
-\begin{mdframed}
-    \textbf{La extensión máxima para esta sección es de 1 página.}
-\end{mdframed}
+A continuacion se detallan los archivos utilizados y el contenido de cada uno, además en el apendice se puede encontrar el link al repositorio
+de github. 
 
-Aquí deben explicar la estructura de sus programas haciendo referencias a los archivos y funciones de su entrega. No adjunte código en esta sección.
-\begin{mdframed}
-    Si se utiliza algún código, idea, o contenido extraído de otra fuente, este \textbf{debe} ser citado en el lugar exacto donde se utilice, en lugar de mencionarlo al final del informe.
-\end{mdframed}
+\begin{itemize}
+    \item \textbf{Archivos .cpp y .hpp}
+    \begin{itemize}
+        \item \textbf{DP.cpp:} Algoritmo de programacion dinamica.
+        \item \textbf{BF.cpp:} Algoritmo de fuerza bruta.
+        \item \textbf{utils.hpp:} Funcion de lectura de archivos para los costos, funciones de costos, funcion de tamaño espacial, funcion de reconstruccion.
+    \end{itemize}
+    \item \textbf{Generadores}
+    \begin{itemize}
+        \item \textbf{GeneradorData.py: } Genera los datasets a utilizar.
+        \item \textbf{GenerarCostos.py: } Genera los costos de las operaciones de insercion, eliminacion, reemplazo y transposicion.
+        \item \textbf{Graficos.py: } Genera los graficos con los resultados almacenados en BF.txt y DP.txt.
+    \end{itemize}
+    \item \textbf{Archivos .txt}
+    \begin{itemize}
+        \item \textbf{cost\_operacion.txt: } estos archivos contienen las matrices de costos generadas. 
+        \item \textbf{DP.txt y BF.txt: } contienen los datos de salida de cada ejecucion
+        \item \textbf{(datasets).txt: } estos archvos contienen los casos de prueba utilizados.
+    \end{itemize}
+\end{itemize}

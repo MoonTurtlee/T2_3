@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.4)  12 NOV 2024 20:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.4)  17 NOV 2024 23:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1367,8 +1367,8 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
  (tarea_main.aux
-LaTeX Info: Redefining \. on input line 16.
-LaTeX Info: Redefining \% on input line 16.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
 )
 \openout1 = `tarea_main.aux'.
 
@@ -1529,11 +1529,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 43.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 43.
- (sections/abstract.tex
-
-LaTeX Warning: Citation 'elsevier_abstract_2024' on page 1 undefined on input line 3.
-
-) (tarea_main.toc
+ (sections/abstract.tex) (tarea_main.toc
 LaTeX Info: Redefining \sptext on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -1546,142 +1542,102 @@ Package cleveref Info: loaded `spanish' language definitions on input line 1.
 
 [1{C:/Users/PlayF/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
-] (sections/introduction.tex
-
-LaTeX Warning: Citation 'GoodScientificPaper' on page 2 undefined on input line 12.
-
-
-LaTeX Warning: Citation 'GoodScientificPaper' on page 2 undefined on input line 12.
-
-)
+] (sections/introduction.tex)
 
 [2] (sections/design_analysis.tex
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 13.
+(Font)              scaled to size 10.07397pt on input line 2.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 13.
+(Font)              scaled to size 7.63599pt on input line 2.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 13.
+(Font)              scaled to size 5.51999pt on input line 2.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 13.
+(Font)              scaled to size 10.07397pt on input line 2.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 13.
+(Font)              scaled to size 7.63599pt on input line 2.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 13.
-
-
-LaTeX Warning: Citation 'algorithm2e' on page 3 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'algorithm2e' on page 3 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'ctan-algorithm2e' on page 3 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'ctan-algorithm2e' on page 3 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'overleaf-algorithms' on page 3 undefined on input line 17.
-
-
-LaTeX Warning: Citation 'overleaf-algorithms' on page 3 undefined on input line 17.
-
-
-Overfull \hbox (13.02324pt too wide) in paragraph at lines 17--18
-\T1/futs/m/n/10.95 ta-ción de al-go-rit-mos. Se re-co-mien-da con-sul-tar [] [[]] y []
- []
-
+(Font)              scaled to size 5.51999pt on input line 2.
 ) (sections/design_analysis_brute_force.tex
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 1.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 1.
+(Font)              scaled to size 6.99199pt on input line 39.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 1.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 1.
+(Font)              scaled to size 6.99199pt on input line 39.
+) (sections/design_analysis_dynamic_programming.tex
 
+[3]
 
-LaTeX Warning: Citation 'taocv3' on page 3 undefined on input line 1.
+[4])
 
+[5] (sections/implementations.tex
+LaTeX Font Info:    Trying to load font information for TS1+futs on input line 7.
+ (C:\Users\PlayF\AppData\Local\Programs\MiKTeX\tex/latex/fourier\ts1futs.fd
+File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
+))
 
-LaTeX Warning: Citation 'taocv3' on page 3 undefined on input line 1.
-
-
-LaTeX Warning: Citation 'taocv3' on page 3 undefined on input line 1.
-
-)
-
-[3] (sections/design_analysis_dynamic_programming.tex
-
-LaTeX Warning: Citation 'algorithms_erickson' on page 4 undefined on input line 2.
-
-
-LaTeX Warning: Citation 'algorithms_erickson' on page 4 undefined on input line 2.
-
-
-LaTeX Warning: Citation 'algorithms_erickson' on page 4 undefined on input line 2.
-
-)
-
-[4]
-
-[5] (sections/implementations.tex)
-
-[6] (sections/experiment_intro.tex
-
-LaTeX Warning: Citation 'popper2005logic' on page 7 undefined on input line 7.
-
-
-LaTeX Warning: Citation 'popper2005logic' on page 7 undefined on input line 7.
-
-
-LaTeX Warning: Citation 'popper2005logic' on page 7 undefined on input line 7.
-
-
-LaTeX Warning: Citation 'inbookFonseca' on page 7 undefined on input line 8.
-
-) (sections/experiment_dataset.tex) (sections/experiment_results.tex
-Package mdframed Info: Not enough space on this page on input line 3.
+[6] (sections/experiment_intro.tex) (sections/experiment_dataset.tex) (sections/experiment_results.tex
+<images/IgualLargo_analisis.png, id=121, 1070.0778pt x 456.0237pt>
+File: images/IgualLargo_analisis.png Graphic file (type png)
+<use images/IgualLargo_analisis.png>
+Package pdftex.def Info: images/IgualLargo_analisis.png  used on input line 5.
+(pdftex.def)             Requested size: 472.03123pt x 201.159pt.
 
 
 [7]
-Package mdframed Info: Not enough space on this page on input line 3.
- (tikz/plot1.tex) (tikz/plot2.tex) (tikz/plot3.tex)
+<images/Transposiciones_analisis.png, id=129, 1070.0778pt x 456.0237pt>
+File: images/Transposiciones_analisis.png Graphic file (type png)
+<use images/Transposiciones_analisis.png>
+Package pdftex.def Info: images/Transposiciones_analisis.png  used on input line 14.
+(pdftex.def)             Requested size: 472.03123pt x 201.159pt.
+<images/costos_por_dataset.png, id=130, 709.6914pt x 421.0932pt>
+File: images/costos_por_dataset.png Graphic file (type png)
+<use images/costos_por_dataset.png>
+Package pdftex.def Info: images/costos_por_dataset.png  used on input line 21.
+(pdftex.def)             Requested size: 236.01561pt x 140.03421pt.
 
-[8]
-<images/4_impurezas_cantmax_size10.png, id=134, 1204.5pt x 1204.5pt>
-File: images/4_impurezas_cantmax_size10.png Graphic file (type png)
-<use images/4_impurezas_cantmax_size10.png>
-Package pdftex.def Info: images/4_impurezas_cantmax_size10.png  used on input line 37.
-(pdftex.def)             Requested size: 236.01561pt x 236.00687pt.
-File: images/4_impurezas_cantmax_size10.png Graphic file (type png)
-<use images/4_impurezas_cantmax_size10.png>
-Package pdftex.def Info: images/4_impurezas_cantmax_size10.png  used on input line 40.
-(pdftex.def)             Requested size: 236.01561pt x 236.00687pt.
-)
 
-[9 <./images/4_impurezas_cantmax_size10.png>] (sections/conclusions.tex)
+[8 <./images/IgualLargo_analisis.png> <./images/Transposiciones_analisis.png>]
+<images/LetrasRepetidas_analisis.png, id=140, 1070.0778pt x 456.0237pt>
+File: images/LetrasRepetidas_analisis.png Graphic file (type png)
+<use images/LetrasRepetidas_analisis.png>
+Package pdftex.def Info: images/LetrasRepetidas_analisis.png  used on input line 31.
+(pdftex.def)             Requested size: 472.03123pt x 201.159pt.
+<images/casos_especiales.png, id=141, 1071.2823pt x 885.3075pt>
+File: images/casos_especiales.png Graphic file (type png)
+<use images/casos_especiales.png>
+Package pdftex.def Info: images/casos_especiales.png  used on input line 40.
+(pdftex.def)             Requested size: 472.03123pt x 390.09035pt.
 
-[10] (condiciones.tex
+
+[9 <./images/costos_por_dataset.png> <./images/LetrasRepetidas_analisis.png>]
+<images/comparacion_general_tiempos.png, id=150, 850.377pt x 493.3632pt>
+File: images/comparacion_general_tiempos.png Graphic file (type png)
+<use images/comparacion_general_tiempos.png>
+Package pdftex.def Info: images/comparacion_general_tiempos.png  used on input line 48.
+(pdftex.def)             Requested size: 472.03123pt x 273.86499pt.
+
+
+[10 <./images/casos_especiales.png>])
+
+[11 <./images/comparacion_general_tiempos.png>] (sections/conclusions.tex)
+
+[12] (condiciones.tex
 Overfull \hbox (5.05753pt too wide) in paragraph at lines 33--34
 []\T1/futs/m/n/10.95 No mo-di-fi-que \T1/cmtt/m/n/10.95 preamble.tex\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 tarea_main.tex\T1/futs/m/n/10.95 , \T1/cmtt/m/n/10.95 condiciones.tex\T1/futs/m/n/10.95 , es-truc-tu-ra de di-rec-to-rios, nom-
  []
 
 )
 
-[11] (sections/appendix1.tex)
+[13] (sections/appendix1.tex)
 
 LaTeX Warning: Empty bibliography on input line 101.
 
 
 
-[12] (tarea_main.aux
-LaTeX Info: Redefining \sptext on input line 16.
-LaTeX Info: Redefining \. on input line 16.
-LaTeX Info: Redefining \% on input line 16.
-Package cleveref Info: loaded `spanish' language definitions on input line 16.
+[14] (tarea_main.aux
+LaTeX Info: Redefining \sptext on input line 14.
+LaTeX Info: Redefining \. on input line 14.
+LaTeX Info: Redefining \% on input line 14.
+Package cleveref Info: loaded `spanish' language definitions on input line 14.
 )
  ***********
 LaTeX2e <2024-11-01>
@@ -1703,17 +1659,17 @@ Package logreq Info: Writing requests to 'tarea_main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56103 strings out of 473702
- 1286072 string characters out of 5719438
- 2245848 words of memory out of 5000000
- 78209 multiletter control sequences out of 15000+600000
- 720507 words of font info for 175 fonts, out of 8000000 for 9000
+ 55378 strings out of 473702
+ 1267420 string characters out of 5719438
+ 2228773 words of memory out of 5000000
+ 77482 multiletter control sequences out of 15000+600000
+ 718375 words of font info for 172 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,21n,110p,7322b,2495s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\PlayF\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on tarea_main.pdf (12 pages, 194758 bytes).
+ 107i,16n,110p,7322b,2191s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\PlayF\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourier/fourier-mex.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourier/fourier-mlit.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/public/fourier/fourier-ms.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putb8a.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putr8a.pfb><C:/Users/PlayF/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on tarea_main.pdf (14 pages, 1765051 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 71 named destinations out of 1000 (max. 500000)
- 74 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 264 PDF objects out of 1000 (max. 8388607)
+ 76 named destinations out of 1000 (max. 500000)
+ 99 words of extra memory for PDF output out of 10000 (max. 10000000)
 

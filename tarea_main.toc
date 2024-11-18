@@ -1,17 +1,21 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
 \contentsline {section}{\numberline {2}Diseño y Análisis de Algoritmos}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Fuerza Bruta}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Fuerza Bruta}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Ejemplo de ejecución}{3}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Análisis de complejidad espacial y temporal}{3}{subsubsection.2.1.2}%
 \contentsline {subsection}{\numberline {2.2}Programación Dinámica}{4}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Descripción de la solución recursiva}{5}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Relación de recurrencia}{5}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Identificación de subproblemas}{5}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Estructura de datos y orden de cálculo}{5}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.1}Descripción de la solución recursiva}{4}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Relación de recurrencia}{4}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Identificación de subproblemas}{4}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Estructura de datos y orden de cálculo}{4}{subsubsection.2.2.4}%
 \contentsline {subsubsection}{\numberline {2.2.5}Algoritmo utilizando programación dinámica}{5}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Ejemplo de ejecución}{5}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}Análisis de complejidad espacial y temporal}{5}{subsubsection.2.2.7}%
 \contentsline {section}{\numberline {3}Implementaciones}{6}{section.3}%
 \contentsline {section}{\numberline {4}Experimentos}{7}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Dataset (casos de prueba)}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Resultados}{7}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Conclusiones}{10}{section.5}%
-\contentsline {section}{\numberline {6}Condiciones de entrega}{11}{section.6}%
-\contentsline {section}{\numberline {A}Apéndice 1}{12}{appendix.Alph1}%
+\contentsline {subsection}{\numberline {4.2}Resultados}{8}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Conclusiones}{12}{section.5}%
+\contentsline {section}{\numberline {6}Condiciones de entrega}{13}{section.6}%
+\contentsline {section}{\numberline {A}Apéndice 1}{14}{appendix.Alph1}%

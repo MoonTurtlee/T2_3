@@ -1,0 +1,49 @@
+16
+1 1
+a
+a
+1 1
+a
+a
+2 2
+tt
+tt
+3 3
+nnn
+nnn
+4 4
+aaaa
+aaaa
+5 5
+nnnnn
+nnnnn
+6 6
+qqqqqq
+qqqqqq
+7 7
+xxxxxxx
+xxxxxxx
+8 8
+ffffffff
+ffffffff
+9 9
+hhhhhhhhh
+hhhhhhhhh
+10 10
+llllllllll
+llllllllll
+11 11
+ppppppppppp
+ppppppppppp
+12 12
+vvvvvvvvvvvv
+vvvvvvvvvvvv
+13 13
+lllllllllllll
+lllllllllllll
+14 14
+iiiiiiiiiiiiii
+iiiiiiiiiiiiii
+15 15
+aaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaa

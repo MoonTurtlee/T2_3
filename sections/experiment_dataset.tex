@@ -1,12 +1,22 @@
-\begin{mdframed}
-    \textbf{La extensión máxima para esta sección es de 2 páginas.}
-\end{mdframed}
-Es importante generar varias muestras con características similares para una misma entrada, por ejemplo, variando tamaño del input dentro de lo que les permita la infraestructura utilizada en ests informe, con el fin de capturar una mayor diversidad de casos y obtener un análisis más completo del rendimiento de los algoritmos.
-
-\begin{mdframed}
-    Aunque la implementación de los algoritmos debe ser realizada en C++, se recomienda aprovechar otros lenguajes como Python para automatizar la generación de casos de prueba, ya que es más amigable para crear gráficos y realizar análisis de los resultados. Python, con sus bibliotecas como \texttt{matplotlib} o \texttt{pandas}, facilita la visualización de los datos obtenidos de las ejecuciones de los distintos algoritmo bajo diferentes escenarios.
-\end{mdframed}    
-
-\begin{mdframed}    
-    Debido a la naturaleza de las pruebas en un entorno computacional, los tiempos de ejecución pueden variar significativamente dependiendo de factores externos, como la carga del sistema en el momento de la ejecución. Por lo tanto, para obtener una medida más representativa, siempre es recomendable ejecutar múltiples pruebas con las mismas características de entrada y calcular el promedio de los resultados.
-\end{mdframed}
+\begin{itemize}
+    \item \textbf{1. IgualLargo.txt}
+    \begin{itemize}
+        \item Este archivo contiene pares de cadenas de igual longitud. Cada par está identificado por un número que indica la longitud de las cadenas, seguido de las cadenas mismas. 
+        \item La utilizacion de este dataset se utiliza a modo de estudiar como varia el tiempo de ejecucion de ambos algoritmos sobre casos aleatorios.
+    \end{itemize}
+    \item \textbf{2. LetrasRepetidas.txt}
+    \begin{itemize}
+        \item Este archivo incluye pares de cadenas donde los caracteres de cada cadena son iguales y repetidos.
+        \item Este dataset se utiliza para estudiar el peor caso posible teoricamente, en el cual se pueden realizar todas las operaciones en cada llamada
+    \end{itemize}
+    \item \textbf{3. Transposiciones.txt}
+    \begin{itemize}
+        \item Este archivo contiene pares de cadenas que difieren únicamente en una o más transposiciones de caracteres consecutivos.
+        \item Este dataset se utiliza a modo de estudiar la complejidad adicional que proporcionan las transposiciones y la optimización del costo.
+    \end{itemize}
+    \item \textbf{4. VacioS1.txt y VacioS2.txt}
+    \begin{itemize}
+        \item Estos archivos incluyen cadenas donde una de las cadenas está vacía, mientras que la otra tiene diferentes longitudes.
+        \item Permite estudiar casos donde todas las operaciones son solamente inserciones o eliminaciones.
+    \end{itemize}
+\end{itemize}

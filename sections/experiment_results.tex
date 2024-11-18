@@ -1,51 +1,53 @@
-\begin{mdframed}
-    \textbf{La extensión máxima para esta sección es de 4 páginas.}
-\end{mdframed}
 
-
-En esta sección, los resultados obtenidos, como las gráficas o tablas, deben estar respaldados por los datos generados durante la ejecución de sus programas. Es fundamental que, junto con el informe, se adjunten los archivos que contienen dichos datos para permitir su verificación. Además, se debe permitir y especficiar como obtener esos archivos desde una ejecución en otro computador (otra infraestructura para hacer lso experimentos).
-
-\textbf{No es necesario automatizar la generación de las gráficas}, pero sí es imprescindible que se pueda confirmar que las visualizaciones presentadas son producto de los datos generados por sus algoritmos, aunque la trazabilidad de los datos hasta las visualizaciones es esencial para garantizar que su validez: describa cómo se generaron los datos, cómo se procesaron y cómo se visualizaron de manera que pueda ser replicado por quien lea su informe.
-
-Agregue gráficas que muestren los resultados de sus experimentos. La cantidad de páginas es limitada, por lo tanto escoja las gráficas más representativas y que muestren de manera clara los resultados obtenidos. Esta elección es parte de lo que se evaluara en la sección de presentación de resultados. Referencie las figuras en el texto, describa lo que se observa en ellas y por qué son relevantes.
-
-En la \cref{fig:scatterplot_1} se muestra un scatterplot hecho con \href{https://es.overleaf.com/learn/latex/TikZ_package}{TikZ} con el tamaño ideal cuando se incluyen dos figuras. Queda a criterio de usted el decidir qué figuras incluir.
-
+A continuacion se discuten los resultados obtenidos por cada dataset
 \begin{figure}[H]
     \centering
-    \input{tikz/plot1.tex}
-    \caption{Ejemplo de scatterplot hecho con tikz. Tamaño ideal 1.}
+        \includegraphics[width=\textwidth]{images/IgualLargo_analisis.png}
+    \caption{Cadenas aleatorias de largo creciente}
     \label{fig:scatterplot_1}
 \end{figure}
-
+En el grafico de la iquierda se puede observar la inmensa diferencia en tiempo de ejecucion de ambos algoritmos a medida que el tamaño de la entrada crece,
+aunque la menor complejidad temporal que maneja programacion dinamica requiere una mayor complejidad espacial.
 
 \begin{figure}[H]
     \centering
-    \begin{minipage}[t]{0.5\textwidth}
-    \input{tikz/plot2.tex}
-    \end{minipage}%
-    \begin{minipage}[t]{0.5\textwidth}
-    \input{tikz/plot3.tex}
-    \end{minipage}%
-    \caption{Ejemplo de scatterplot hecho con tikz. Tamaño ideal 2.}
+        \includegraphics[width=\textwidth]{images/Transposiciones_analisis.png}
+    \caption{Cadenas de pares transpuestos}
     \label{fig:scatterplot_2}
 \end{figure}
-
 \begin{figure}[H]
     \centering
     \begin{minipage}[t]{0.5\textwidth}
-        \includegraphics[width=\textwidth]{images/4_impurezas_cantmax_size10.png}
+        \includegraphics[width=\textwidth]{images/costos_por_dataset.png}
     \end{minipage}%
-    \begin{minipage}[t]{0.5\textwidth}
-        \includegraphics[width=\textwidth]{images/4_impurezas_cantmax_size10.png}    \end{minipage}%
-    \caption{Ejemplo de scatterplot hecho con matplotlib.}
-    \label{fig:scatterplot_3}
+    \caption{Costos de edicion}
+    \label{fig:barplot_1}
 \end{figure}
+Analizando las figuras 2 y 3 se tiene que las transposiciones juegan un papel relevante puesto que la inclusion de estas aumentan la complejidad, pero esto es por una buena razon,
+ya que estas bajan el costo de edicion de las cadenas.
 
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\textwidth]{images/LetrasRepetidas_analisis.png}
+    \caption{Cadenas de letras repetidas de largo creciente}
+    \label{fig:scatterplot_4}
+\end{figure}
+Las cadenas repetidas es importante estudiarlas, puesto que estas representan el peor caso en temas de complejidad para fuerza bruta, ya que
+las 4 operaciones se realizaran siempre.
 
-
-
-
-\begin{mdframed}
-    Recuerde que es imprescindible que se pueda replicar la generación de las gráficas, por lo que usted debe incluir cómo generó esos datos y  cómo podría generarlos la persona que revisa su entrega y ejecuta sus programas. Por ejemplo, si genera un scatterpolot con Tikz, usted debe explicar cómo obtener la tupla de valores que se usaron para generar la gráfica.
-\end{mdframed}
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\textwidth]{images/casos_especiales.png} 
+        \caption{Casos Cadenas Vacias}
+    \label{fig:scatterplot_5}
+\end{figure}
+Las cadenas vacias representan el mejor caso para fuerza bruta, ya que realiza trabajo lineal en vez de exponencial, por esta misma razon le gana en tiempo de ejecucion
+a programacion dinamica.
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=\textwidth]{images/comparacion_general_tiempos.png}    
+    \caption{Resumen general de resultados}
+    \label{fig:scatterplot_6}
+\end{figure}
+Finalmente si queremos resolver el problema de la menor distancia, es importante tener en cuenta que el enfoque de fuerza bruta para cadenas vacias 
+puede llegar a ser util, sin embargo el enfoque de programacion dinamica es una buena opcion general

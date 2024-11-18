@@ -1,42 +1,58 @@
-\epigraph{\textit{``Indeed, brute force is a perfectly good technique in many cases; the real question is, can we use brute force in such a way that we avoid the worst-case behavior?''}}{--- \citeauthor{taocv3}, \citeyear{taocv3} \cite{taocv3}}
+%\epigraph{\textit{``Indeed, brute force is a perfectly good technique in many cases; the real question is, can we use brute force in such a way that we avoid the worst-case behavior?''}}{--- \citeauthor{taocv3}, \citeyear{taocv3} \cite{taocv3}}
 
 \begin{algorithm}[H]
-    \SetKwProg{myproc}{Procedure}{}{}
-    \SetKwFunction{AlgorithmName}{AlgorithmName}  % Cambia 'AlgorithmName' por el nombre del enfoque elegido
-    \SetKwFunction{AuxiliaryFunction}{AuxiliaryFunction}  % Función auxiliar de ejemplo
-    
+    \SetKwProg{myproc}{Procedure}{}{end}
+    \SetKwFunction{BF}{BF}  % Nombre de la función principal
+    \SetKwFunction{CostoIns}{costo\_ins}  % Función de costo de inserción
+    \SetKwFunction{CostoDel}{costo\_del}  % Función de costo de eliminación
+    \SetKwFunction{CostoSub}{costo\_sub}  % Función de costo de sustitución
+    \SetKwFunction{CostoTrans}{costo\_trans}  % Función de costo de transposición
+
     \DontPrintSemicolon
     \footnotesize
 
     % Definición del algoritmo principal
-    \myproc{\AlgorithmName{S1, S2}}{
-    \uIf{S1 está vacía}{
-        \Return longitud de S2\;  % Return explícito si S1 está vacía
+    \myproc{\BF{S1, S2, i, j}}{
+        \uIf{$i \geq \text{longitud}(S1)$ \textbf{and} $j \geq \text{longitud}(S2)$}{
+            \Return $0$\;
+        }
+        
+        \uIf{$i \geq \text{longitud}(S1)$}{
+            \Return $\CostoIns{S2[j]} + \BF{S1, S2, i, j+1}$\;
+        }
+        
+        \uIf{$j \geq \text{longitud}(S2)$}{
+            \Return $\CostoDel{S1[i]} + \BF{S1, S2, i+1, j}$\;
+        }
+        
+        $elim \gets \CostoDel{S1[i]} + \BF{S1, S2, i+1, j}$\;
+        $ins \gets \CostoIns{S2[j]} + \BF{S1, S2, i, j+1}$\;
+        $remp \gets \CostoSub{S1[i], S2[j]} + \BF{S1, S2, i+1, j+1}$\;
+        $transp \gets \infty$\;
+        
+        \If{$i+1 < \text{longitud}(S1)$ \textbf{and} $j+1 < \text{longitud}(S2)$ \textbf{and} $S1[i] = S2[j+1]$ \textbf{and} $S1[i+1] = S2[j]$}{
+            $transp \gets \CostoTrans{S1[i], S1[i+1]} + \BF{S1, S2, i+2, j+2}$\;
+        }
+        
+        \Return $\min(\{elim, ins, remp, transp\})$\;
     }
-    \uElseIf{S2 está vacía}{
-        \Return longitud de S1\;  % Return explícito si S2 está vacía
-    }
-    \uElseIf{S1[0] = S2[0]}{
-        \Return \AlgorithmName{S1[1:], S2[1:]}  % Llamada recursiva
-    }
-    \Else{
-        % Ejemplo de llamado a una función auxiliar
-        $costo \leftarrow \AuxiliaryFunction{S1, S2}$\;
-        \Return costo\;  % Retornar el valor calculado
-    }
-    }
-
-    % Definición de la función auxiliar
-    \myproc{\AuxiliaryFunction{S1, S2}}{
-    % Acciones o cálculos auxiliares
-    \uIf{S1 y S2 son similares}{
-        \Return algún valor o costo\;  % Retornar el valor calculado por la función auxiliar
-    }
-    \Else{
-        % Llamar de nuevo a la función principal
-        \Return \AlgorithmName{S1 modificado, S2}\;  % Llamada recursiva y retorno del resultado
-    }
-    }
-    \caption{Este es solo un ejemplo de cómo estructurar el pseudocódigo, con retornos explícitos y llamados a funciones.}
+    \caption{Algoritmo de Fuerza Bruta para la Transformación de Cadenas}
     \label{alg:mi_algoritmo_1}
 \end{algorithm}
+
+
+\subsubsection{Ejemplo de ejecución}
+
+    Como ejemplo tomemos las cadenas
+    S1: 'abc'
+    S2: 'abs'
+    El algoritmo reemplazaria 'a' por 'a', luego reemplazaria 'b' por 'b' y posteriormente eliminaria 'c' e insertaria 's'
+
+\subsubsection{Análisis de complejidad espacial y temporal}
+
+    En cada llamada que se realiza se pueden generar hasta 4 subproblemas nuevos, así tambien es necesario recorrer cada cadena hasta el final de la misma mediante 
+    el uso de los indices $(i,j)$, los cuales llegaran a un valor final $(n,m)$ en donde $n$ y $m$ son los largos de $S1$ y $S2$ respectivamente, por lo que el 
+    número total de operaciones será aproximadamente $4^{\min(n,m)}$, dando así que la complejidad temporal pertence a $O(4^{\min(n,m)})$. Por otra parte,
+    la complejidad espacial asociada a esta implementacion sería $O(n + m)$ puesto que no se utiliza ninguna estructura de datos adicional al tamaño de la entrada y
+    para las llamadas recursivas se apoya en el stack.
+

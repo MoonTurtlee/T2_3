@@ -1,63 +1,98 @@
-
-\epigraph{\textit{Dynamic programming is not about filling in tables. It's about smart recursion!}}{\citeauthor{algorithms_erickson}, \citeyear{algorithms_erickson} \cite{algorithms_erickson}}
-
-\begin{enumerate}[1)]
-    \item Describa la solución recursiva.
-    \item Escriba la relación de recurrencia, incluyendo condiciones y casos base.
-    \item Identifique subproblemas.
-    \item Defina estructura de datos a utilizar y especifique el orden de calculo que realiza su programa que utiliza programación dinámica. 
-\end{enumerate}
+%\epigraph{\textit{Dynamic programming is not about filling in tables. It's about smart recursion!}}{\citeauthor{algorithms_erickson}, \citeyear{algorithms_erickson} \cite{algorithms_erickson}}
 
 \subsubsection{Descripción de la solución recursiva}
+    
+    Por cada llamada a la función es necesario evaluar los cuatro casos posibles (eliminacion, inserción, reemplazo y transposición) y escoger el de menor costo,
+    si guardamos el costo asociado a esa llamada este nos puede servir para evitar realizar el mismo calculo si se da el caso, de esta manera se asegura que cada llamada
+    que posea los mismos parametros se resuelva una única vez, esto implica que mediante la consulta recurrente de valores podemos
+    disminuir el costo temporal del problema en comparación a la utilizacion de fuerza bruta y obtendremos exactamente la misma respuesta final. 
+    
 
 \subsubsection{Relación de recurrencia}
+    
+    \begin{itemize}
+        \item \textit{(condicion)} Si el valor de $Cache[i][j]$ es distinto de $-1$ se retorna el valor de $Cache[i][j]$ 
+        \item \textit{(caso base)} Si el valor de $i$ es igual al largo de $S1$ y el valor de $j$ igual al largo de $S2$ entonces se retorna 0 
+        \item \textit{(condicion)} Si el valor de $i$ iguala el largo de $S1$ entonces solo se realizan inserciones por cada caracter faltante por cubrir de $S2$, devolviendo el costo de estas operaciones.
+        \item \textit{(condicion)} Si el valor de $j$ iguala el largo de $S2$ entonces solo se realizan eliminaciones por cada caracter sobrante de $S1$, devolviendo el costo de estas operaciones.
+        \item \textit{(Recurrencia)}
+                \[
+                DP(S1, S2, i, j) = \text{Cache}[i][j] = min
+                \left\{
+                \begin{aligned}
+                    &\text{costo\_del}(S1[i]) + DP(S1, S2, i+1, j), \\[0.5em]
+                    &\text{costo\_ins}(S2[j]) + DP(S1, S2, i, j+1), \\[0.5em]
+                    &\text{costo\_sub}(S1[i], S2[j]) + DP(S1, S2, i+1, j+1), \\[0.5em]
+                    &\text{costo\_trans}(S1[i], S1[i+1]) + DP(S1, S2, i+2, j+2)
+                \end{aligned}
+                \right\}
+                \]
+    \end{itemize}
+    
 
 \subsubsection{Identificación de subproblemas}
 
+Los subproblemas son las combinaciones de las posiciones $i$ y $j$
+que representan el costo mínimo para transformar la subcadena de $S1$ desde $i$ a
+la subcadena de $S2$ desde $j$.
+
 \subsubsection{Estructura de datos y orden de cálculo}
+
+Se utiliza el enfoque top-down una tabla de \texttt{Cache} para almacenar los resultados, que son calculados 
+recursivamente, garantizando que cada subproblema solo se evalúe una vez.
 
 \subsubsection{Algoritmo utilizando programación dinámica}
 
-
-
+\renewcommand\thealgocf{2}
 \begin{algorithm}[H]
-
-    \SetKwProg{myproc}{Procedure}{}{}
-    \SetKwFunction{AlgorithmName}{AlgorithmName}  % Cambia 'AlgorithmName' por el nombre del enfoque elegido
-    \SetKwFunction{AuxiliaryFunction}{AuxiliaryFunction}  % Función auxiliar de ejemplo
+    \SetKwProg{myproc}{Procedure}{}{end}
+    \SetKwFunction{DP}{DP}
+    \KwIn{Cadenas $S1$, $S2$, índices $i$, $j$, y matriz de cache de tamaño (n+1) $\times$ (m+1) inicializada en -1 }
     
-    \DontPrintSemicolon
     \footnotesize
 
-    % Definición del algoritmo principal
-    \myproc{\AlgorithmName{S1, S2}}{
-    \uIf{S1 está vacía}{
-        \Return longitud de S2\;  % Return explícito si S1 está vacía
-    }
-    \uElseIf{S2 está vacía}{
-        \Return longitud de S1\;  % Return explícito si S2 está vacía
-    }
-    \uElseIf{S1[0] = S2[0]}{
-        \Return \AlgorithmName{S1[1:], S2[1:]}  % Llamada recursiva
-    }
-    \Else{
-        % Ejemplo de llamado a una función auxiliar
-        $costo \leftarrow \AuxiliaryFunction{S1, S2}$\;
-        \Return costo\;  % Retornar el valor calculado
-    }
-    }
+    \myproc{\DP{S1, S2, i, j, Cache}}{
+        \If{$Cache[i][j] \neq -1$}{
+            \Return $Cache[i][j]$
+        }
 
-    % Definición de la función auxiliar
-    \myproc{\AuxiliaryFunction{S1, S2}}{
-    % Acciones o cálculos auxiliares
-    \uIf{S1 y S2 son similares}{
-        \Return algún valor o costo\;  % Retornar el valor calculado por la función auxiliar
+        \If{$i = \text{largo}(S1)$ \textbf{and} $j = \text{largo}(S2)$}{
+            \Return $Cache[i][j] = 0$
+        }
+        
+        \If{$i = \text{largo}(S1)$}{
+            \Return $Cache[i][j] = \text{costo\_ins}(S2[j]) + \text{DP}(S1, S2, i, j+1, Cache)$
+        }
+        
+        \If{$j = \text{largo}(S2)$}{
+            \Return $Cache[i][j] = \text{costo\_del}(S1[i]) + \text{DP}(S1, S2, i+1, j, Cache)$
+        }
+        
+        $elim \gets \text{costo\_del}(S1[i]) + \text{DP}(S1, S2, i+1, j, Cache)$\;
+        $ins \gets \text{costo\_ins}(S2[j]) + \text{DP}(S1, S2, i, j+1, Cache)$\;
+        $remp \gets \text{costo\_sub}(S1[i], S2[j]) + \text{DP}(S1, S2, i+1, j+1, Cache)$\;
+        $transp \gets \infty$\;
+        
+        \If{$i+1 < \text{largo}(S1)$ \textbf{and} $j+1 < \text{largo}(S2)$ \textbf{and} $S1[i] = S2[j+1]$ \textbf{and} $S1[i+1] = S2[j]$}{
+            $transp \gets \text{costo\_trans}(S1[i], S1[i+1]) + \text{DP}(S1, S2, i+2, j+2, Cache)$
+        }
+        
+        \Return $Cache[i][j] = \min(elim, ins, remp, transp)$
     }
-    \Else{
-        % Llamar de nuevo a la función principal
-        \Return \AlgorithmName{S1 modificado, S2}\;  % Llamada recursiva y retorno del resultado
-    }
-    }
-    \caption{Este es solo un ejemplo de cómo estructurar el pseudocódigo, con retornos explícitos y llamados a funciones.}
+    \caption{Algoritmo de Programación Dinámica para la Transformación de Cadenas}
     \label{alg:mi_algoritmo_2}
 \end{algorithm}
+
+
+\subsubsection{Ejemplo de ejecución}
+    Como ejemplo tomemos las cadenas
+    S1: 'abc'
+    S2: 'abs'
+    El algoritmo reemplazaria 'a' por 'a', luego reemplazaria 'b' por 'b' y posteriormente eliminaria 'c' e insertaria 's'
+\subsubsection{Análisis de complejidad espacial y temporal}
+
+    La implementación de programación dinámica utiliza una tabla de caché para almacenar el costo mínimo de edición para cada par $(i,j)$, permitiendo así que cada estado (eliminación, 
+    inserción, sustitución y transposición) realice un número constante de operaciones implicando un costo temporal $O(1)$ ya que solo consideramos la consulta al costo, aunque, en el peor caso, será necesario llenar por completo la tabla de caché, la cual tiene 
+    dimensiones $(n+1) \times (m+1)$, donde $n$ y $m$ son los largos de $S1$ y $S2$, respectivamente. Esto significa que hay \(O(n \times m)\) estados posibles, y cada uno se evaluará a lo sumo una vez, 
+    por lo que la complejidad temporal es \(O(n \times m)\). En cuanto al análisis espacial, el uso de la tabla de caché la que utiliza mayor espacio, lo que 
+    implica que la complejidad espacial también es \(O(n \times m)\).
