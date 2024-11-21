@@ -71,10 +71,12 @@ int main() {
         auto fin = chrono::high_resolution_clock::now();
         auto duracion = chrono::duration<double, std::milli>(fin - inicio);
 
+        string dataset = "";
+        
         // Escribir los resultados en el archivo
-        outFile << distancia << "," << S1.length() << "," << S2.length() << "," 
+        outFile << dataset << " " << distancia << "," << S1.length() << "," << S2.length() << "," 
                 << fixed << setprecision(6) << duracion.count() << "," 
-                << sizeof(string)*2 << endl;
+                << 0 << endl;
 
         casos--;
     }

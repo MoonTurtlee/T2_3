@@ -1,5 +1,7 @@
-El análisis realizado demuestra que la programación dinámica es una estrategia superior en términos de eficiencia temporal para el cálculo de la distancia de Damerau-Levenshtein, particularmente en casos donde las cadenas tienen longitudes significativas o presentan múltiples posibles operaciones. Al almacenar los resultados intermedios en una tabla de caché, este enfoque reduce drásticamente el número de cálculos redundantes, logrando una complejidad temporal y espacial controlada de $O(n \times m)$
-
-Por otro lado, el algoritmo de fuerza bruta, aunque limitado por su alta complejidad exponencial en la mayoría de los escenarios, presenta un desempeño competitivo en casos específicos, como cadenas vacías. En estos contextos, su simplicidad lo convierte en una alternativa válida para problemas de menor escala, donde la carga de memoria es un factor crítico.
-
-Este estudio destaca la importancia de seleccionar el enfoque algorítmico adecuado según las características del problema. Además, subraya cómo el análisis detallado de los costos individuales de las operaciones puede influir en la optimización y aplicabilidad de los algoritmos. En general, este trabajo contribuye al entendimiento de la interacción entre complejidad computacional y recursos en el diseño de algoritmos para problemas de edición de cadenas.
+Los resultados obtenidos destacan la relevancia de seleccionar el enfoque algorítmico adecuado según las características 
+del problema planteado. La programación dinámica, al reducir cálculos redundantes mediante el almacenamiento de resultados 
+intermedios, demuestra ser eficaz para escenarios con grandes volúmenes de datos o configuraciones complejas. Por otro lado, 
+la fuerza bruta, pese a su alta complejidad, se mantiene como una herramienta competitiva en casos simplificados donde las 
+restricciones de memoria son críticas. Así tambien discernir la inclusion de transposiciones depende expclusivamente de lo que se busque,
+si es prioritario minimizar los costos de edicion son una buena opcion, sin embargo si solo se buscan soluciones factibles su inclusion es
+presindible.\\

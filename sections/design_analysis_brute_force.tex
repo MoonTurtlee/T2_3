@@ -43,16 +43,62 @@
 
 \subsubsection{Ejemplo de ejecución}
 
-    Como ejemplo tomemos las cadenas
-    S1: 'abc'
-    S2: 'abs'
-    El algoritmo reemplazaria 'a' por 'a', luego reemplazaria 'b' por 'b' y posteriormente eliminaria 'c' e insertaria 's'
+Consideremos las cadenas de longitud 3:  
+\[
+S_1 = \texttt{abc}, \quad S_2 = \texttt{adc}.
+\]
+
+Supongamos que los costos de las operaciones son:
+\begin{itemize}
+    \item \( \text{costo\_ins}(x) = 1 \)
+    \item \( \text{costo\_del}(x) = 1 \)
+    \item \( \text{costo\_sub}(x, y) = 1 \) si \( x \neq y \), \( 0 \) en caso contrario
+    \item \( \text{costo\_trans}(x, y) = 1 \)
+\end{itemize}
+
+\subsection*{Paso a Paso de la Ejecución}
+
+\begin{enumerate}
+    \item Llamada inicial: \( BF(\texttt{abc}, \texttt{adc}, 0, 0) \).
+    \begin{itemize}
+        \item \( S_1[0] = \texttt{a}, S_2[0] = \texttt{a} \). Como son iguales, el algoritmo calcula:  
+        \( \text{remp} = 0 + BF(1, 1) \).
+        \item También calcula:  
+        \( \text{elim} = 1 + BF(1, 0) \) y \( \text{ins} = 1 + BF(0, 1) \), mientras que no aplica transposición.
+    \end{itemize}
+
+    \item Segunda llamada: \( BF(\texttt{abc}, \texttt{adc}, 1, 1) \).
+    \begin{itemize}
+        \item \( S_1[1] = \texttt{b}, S_2[1] = \texttt{d} \). Como son diferentes, el algoritmo calcula:  
+        \( \text{remp} = 1 + BF(2, 2) \).
+        \item También calcula:  
+        \( \text{elim} = 1 + BF(2, 1) \),  
+        \( \text{ins} = 1 + BF(1, 2) \), mientras que no aplica transposición.
+    \end{itemize}
+
+    \item Tercera llamada: \( BF(\texttt{abc}, \texttt{adc}, 2, 2) \).
+    \begin{itemize}
+        \item \( S_1[2] = \texttt{c}, S_2[2] = \texttt{c} \). Como son iguales, calcula:  
+        \( \text{remp} = 0 + BF(3, 3) \).
+        \item También calcula:  
+        \( \text{elim} = 1 + BF(3, 2) \) y \( \text{ins} = 1 + BF(2, 3) \), mientras que no aplica transposición.
+    \end{itemize}
+
+    \item Llamada base: \( BF(\texttt{abc}, \texttt{adc}, 3, 3) \).
+    \begin{itemize}
+        \item Caso base: retorna 0 porque ambas cadenas han sido procesadas completamente.
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Resultado}
+
+El costo mínimo para transformar \( S_1 \) en \( S_2 \) es \( 1 \). La única operación necesaria es reemplazar \( \texttt{b} \) por \( \texttt{d} \).
 
 \subsubsection{Análisis de complejidad espacial y temporal}
 
     En cada llamada que se realiza se pueden generar hasta 4 subproblemas nuevos, así tambien es necesario recorrer cada cadena hasta el final de la misma mediante 
     el uso de los indices $(i,j)$, los cuales llegaran a un valor final $(n,m)$ en donde $n$ y $m$ son los largos de $S1$ y $S2$ respectivamente, por lo que el 
     número total de operaciones será aproximadamente $4^{\min(n,m)}$, dando así que la complejidad temporal pertence a $O(4^{\min(n,m)})$. Por otra parte,
-    la complejidad espacial asociada a esta implementacion sería $O(n + m)$ puesto que no se utiliza ninguna estructura de datos adicional al tamaño de la entrada y
+    la complejidad espacial asociada a esta implementacion sería $O(1)$ puesto que no se utiliza ninguna estructura de datos adicional al tamaño de la entrada y
     para las llamadas recursivas se apoya en el stack.
 

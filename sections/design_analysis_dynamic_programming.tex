@@ -85,10 +85,65 @@ recursivamente, garantizando que cada subproblema solo se evalúe una vez.
 
 
 \subsubsection{Ejemplo de ejecución}
-    Como ejemplo tomemos las cadenas
-    S1: 'abc'
-    S2: 'abs'
-    El algoritmo reemplazaria 'a' por 'a', luego reemplazaria 'b' por 'b' y posteriormente eliminaria 'c' e insertaria 's'
+Para ilustrar la ejecución del algoritmo de programación dinámica, consideremos las siguientes cadenas de largo 3:  
+\[
+S_1 = \texttt{abc}, \quad S_2 = \texttt{adc}
+\]
+
+Supongamos que los costos de las operaciones son:  
+\begin{itemize}
+    \item \( \text{costo\_ins}(x) = 1 \)
+    \item \( \text{costo\_del}(x) = 1 \)
+    \item \( \text{costo\_sub}(x, y) = 1 \) si \( x \neq y \), \( 0 \) en caso contrario
+    \item \( \text{costo\_trans}(x, y) = 1 \)
+\end{itemize}
+
+Inicializamos una matriz de caché de dimensiones \( 4 \times 4 \) (longitudes de \( S_1 \) y \( S_2 \) más 1), con todos sus valores en \(-1\), indicando que aún no se han calculado.\\
+
+\textbf{Paso a Paso de la Ejecución: }
+
+\begin{enumerate}
+    \item Llamada inicial: \( DP(\texttt{abc}, \texttt{adc}, 0, 0, \text{Cache}) \).
+    \begin{itemize}
+        \item \( S_1[0] = \texttt{a}, S_2[0] = \texttt{a} \). Como son iguales, el algoritmo calcula \( \text{remp} = 0 + DP(1, 1) \).
+        \item También calcula \( \text{elim} = 1 + DP(1, 0) \) y \( \text{ins} = 1 + DP(0, 1) \), mientras que no aplica transposición porque \( S_1[0] \neq S_2[1] \).
+    \end{itemize}
+
+    \item Segunda llamada: \( DP(\texttt{abc}, \texttt{adc}, 1, 1) \).
+    \begin{itemize}
+        \item \( S_1[1] = \texttt{b}, S_2[1] = \texttt{d} \). Como son diferentes, calcula \( \text{remp} = 1 + DP(2, 2) \).
+        \item También calcula \( \text{elim} = 1 + DP(2, 1) \) y \( \text{ins} = 1 + DP(1, 2) \), mientras que no aplica transposición.
+    \end{itemize}
+
+    \item Tercera llamada: \( DP(\texttt{abc}, \texttt{adc}, 2, 2) \).
+    \begin{itemize}
+        \item \( S_1[2] = \texttt{c}, S_2[2] = \texttt{c} \). Como son iguales, calcula \( \text{remp} = 0 + DP(3, 3) \).
+        \item También calcula \( \text{elim} = 1 + DP(3, 2) \) y \( \text{ins} = 1 + DP(2, 3) \), mientras que no aplica transposición.
+    \end{itemize}
+
+    \item Llamada base: \( DP(\texttt{abc}, \texttt{adc}, 3, 3) \).
+    \begin{itemize}
+        \item Caso base: retorna 0 porque ambas cadenas han sido procesadas completamente.
+    \end{itemize}
+\end{enumerate}
+
+\textbf{Matriz de Caché al Final: }
+
+\[
+\text{Cache} =
+\begin{bmatrix}
+0 & 1 & 2 & 3 \\
+1 & 1 & 2 & -1 \\
+2 & 2 & 1 & -1 \\
+3 & -1 & -1 & 0 \\
+\end{bmatrix}
+\] \\
+
+\textbf{Resultado}
+
+El costo mínimo para transformar \( S_1 \) en \( S_2 \) es \( 1 \). La única operación necesaria es reemplazar \( \texttt{b} \) por \( \texttt{d} \).
+
+
 \subsubsection{Análisis de complejidad espacial y temporal}
 
     La implementación de programación dinámica utiliza una tabla de caché para almacenar el costo mínimo de edición para cada par $(i,j)$, permitiendo así que cada estado (eliminación, 
